@@ -9,6 +9,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="viewdetails.css">
     <title>View Details</title>
+   
 </head>
 
 <body>
@@ -35,7 +36,31 @@
           <button  type="button" class=" logoutUser btn btn-outline-primary">Logout</button>
         </div>
       </nav>
-    <div class="container">
+
+      <div class="wrapper">
+      
+        <button class="button-value"  onclick="filterProduct('all')">All</button>
+        <button class="button-value"  onclick="filterProduct('Angora_Farm')">
+            Angora Farm
+        </button>
+        <button class="button-value" onclick="filterProduct('Chaubatia_Gardens')">
+            Chaubatia Gardens
+        </button>
+        <button class="button-value"onclick="filterProduct('Macchi_Tal')">
+            Macchi Tal
+        </button>
+        <button class="button-value"onclick="filterProduct('Horticulture_Garden')">
+            Ram Tal Horticulture Garden
+          </button>
+      </div>
+      <div id="products">
+       
+         
+       </div>
+      
+
+
+    <!-- <div class="container">
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -94,7 +119,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>

@@ -7,6 +7,7 @@ const Regionalhead = require('./model/regional')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const Farmer = require('./model/Farmer')
+const FarmerActivity = require('./model/FarnerActivity')
 const fetchuser = require('./fetchuser')
 
 const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
@@ -26,6 +27,8 @@ app.use('/farmerdetails' , express.static(path.join(__dirname, 'static' , "/ex/f
 app.use('/allfarmers' , express.static(path.join(__dirname, 'static' , "/ex/viewdetails.html")) )
 app.use('/adminLogin' , express.static(path.join(__dirname, 'static' , "/ex/adminlogin.html")) )
 app.use('/farmerview' , express.static(path.join(__dirname, 'static' , "/ex/AssetsFarmer.html")) )
+app.use('/logistics' , express.static(path.join(__dirname, 'static' , "/ex/logistics.html")) )
+app.use('/standalonefarmer' , express.static(path.join(__dirname, 'static' , "/ex/farmerindex.html")) )
 app.use(bodyParser.json())
 
 app.post('/api/change-password', async (req, res) => {
@@ -193,8 +196,8 @@ app.post('/api/farmercreate' , fetchuser , async(req ,res) => {
 	const id = req.user ;
 	try {
 		const response = await Farmer.create({
-			id ,
-			name ,
+			reghead:id ,
+			Name:name ,
 			aadharid,
 			region,
 			crops_produced,
@@ -208,6 +211,48 @@ app.post('/api/farmercreate' , fetchuser , async(req ,res) => {
 		return res.json({ error , message:error.message })
 	}
 }) 
+
+app.post('/api/farmeractivitycreate' , fetchuser , async(req ,res) => {
+	const {name ,aadharid,region,crops_produced,no_of_seedlings,income,latitude,longitude } = req.body ;
+	const id = req.user ;
+	try {
+		const response = await FarmerActivity.create({
+			actname ,
+						startDate,
+						endDate,
+						actproof,
+						labourName,
+						workduration,
+						wages,
+						assetID,
+						driver,
+                        application,
+                        wagesAssets,
+						type,
+						units,
+						cost,
+						typeprod,
+                        unitsprod,
+						location
+
+		})
+		console.log('User created successfully: ', response)
+	} catch (error) {
+		return res.json({ error , message:error.message })
+	}
+}) 
+
+
+app.get('/api/fetchfarmerdetails' , fetchuser , async(req ,res) => {
+	const id = req.user ;
+	try {
+		const response = await Farmer.find({reghead : id}) ;
+		console.log('Users Fetched: ', response)
+	} catch (error) {
+		return res.json({ error , message:error.message })
+	}
+}) 
+
 app.listen(9999, () => {
 	console.log('Server up at 9999')
 })

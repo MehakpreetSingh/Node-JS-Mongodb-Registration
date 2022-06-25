@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="activities.css">
+    
     <title>Activities</title>
 
 </head>
@@ -42,15 +42,15 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="actname">Name of Activity</label>
-                    <input type="text" id="activityName" class="form-control" id="actname" placeholder="Activity Name">
+                    <input type="text"  class="form-control" id="actname" placeholder="Activity Name">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="start">Start Date</label>
-                    <input type="text" id="startDate" class="form-control" id="start" placeholder="Start Date">
+                    <input type="text"  class="form-control" id="startDate" placeholder="Start Date">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="end">End Date</label>
-                    <input type="text" id="endDate" class="form-control" id="end" placeholder="End Date">
+                    <input type="text"  class="form-control" id="endDate" placeholder="End Date">
                 </div>
                 <div class="form-group col-md-6">
                     <label>Activity Proof</label>
@@ -60,11 +60,11 @@
             <h3>Information of People Involved</h3>
             <div class="form-group col-md-6">
                 <label for="peoplename">Name</label>
-                <input type="text" id="labourName" class="form-control" id="peoplename" placeholder="Name">
+                <input type="text" class="form-control" id="labourname" placeholder="Name">
             </div>
             <div class="form-group col-md-6">
                 <label for="workduration">Work Duration In Months</label>
-                <input type="number" id class="form-control" id="workduration" min="1" placeholder="Work Duration">
+                <input type="number" class="form-control" id="workduration" min="1" placeholder="Work Duration">
             </div>
             <div class="form-group col-md-6">
                 <label for="wages">Wages</label>
@@ -81,11 +81,11 @@
             </div>
             <div class="form-group">
                 <label for="wages">Wages</label>
-                <input type="number" class="form-control" id="wages" placeholder="Wages">
+                <input type="number" class="form-control" id="wagesAssets" placeholder="Wages">
             </div>
             <h3>Materials Consumed</h3>
             <div>
-                <input type="file" name="upload" accept="application/pdf,application/vnd.ms-excel" />
+                <input type="file" name="upload" id="application" accept="application/pdf,application/vnd.ms-excel" />
             </div>
             <div class="form-group"><br>
                 <h5>Details of Consumption</h5>
@@ -99,9 +99,9 @@
             <div class="form-group"><br>
                 <h5>Material Produced</h5>
                 <label for="type">Type of Material</label>
-                <input type="text" id="type" placeholder="Material Type">
+                <input type="text" id="typeprod" placeholder="Material Type">
                 <label for="units">Units Consumed</label>
-                <input type="text" id="units" placeholder="Units Consumed">
+                <input type="text" id="unitsprod" placeholder="Units Consumed">
                 <label for="location">Storage Location</label>
                 <input type="text" id="location" placeholder="Storage Location">
             </div>

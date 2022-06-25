@@ -3,14 +3,37 @@ const mongoose = require('mongoose')
 
 const FarmerActivity = new mongoose.Schema(
 	{
-		Name: { type: String, required: true },
-		aadharid: { type: Number, required: true },
-		region: { type: String, required: true },
-		crops_produced : { type: Number, required: true },
-		no_of_seedlings : { type: Number, required: true },
-		income : { type: Number, required: true },
-		latitude : { type: Number, required: true },
-		longitude : { type: Number, required: true },
+		user : {
+			type : mongoose.Schema.Types.ObjectId ,
+            ref:'users'
+		} ,
+		reghead : {
+			type : mongoose.Schema.Types.ObjectId ,
+            ref:'Regionalheads'
+		} ,
+		actname : { type: String, required: true },
+		startDate : { type: String, required: true },
+	  endDate : { type: String, required: true },
+		actproof : { type: String, required: true },
+		labourName : { type: String, required: true },
+		workduration : { type: Number, required: true },
+		wages : { type: Number, required: true },
+		assetID : { type: String, required: true },
+		driver : { type: String, required: true },
+		application : { type: Number, required: true },
+		wagesAssets : { type: Number, required: true },
+		type : { type: String, required: true },
+		units : { type: Number, required: true },
+		cost : { type: Number, required: true },
+
+		typeprod : { type: String, required: true },
+	  unitsprod : { type: String, required: true },
+	  location : { type: String, required: true },
+
+
+
+
+
 	},
 	{ collection: 'FarmerActivity' }
 )
