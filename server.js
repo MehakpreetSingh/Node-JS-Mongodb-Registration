@@ -23,6 +23,7 @@ app.use('/form' , express.static(path.join(__dirname, 'static' , "/ex/form.html"
 app.use('/farmerdetails' , express.static(path.join(__dirname, 'static' , "/ex/farmerdetail.html")) )
 app.use('/allfarmers' , express.static(path.join(__dirname, 'static' , "/ex/viewdetails.html")) )
 app.use('/adminLogin' , express.static(path.join(__dirname, 'static' , "/ex/adminlogin.html")) )
+app.use('/farmerview' , express.static(path.join(__dirname, 'static' , "/ex/AssetsFarmer.html")) )
 app.use(bodyParser.json())
 
 app.post('/api/change-password', async (req, res) => {
