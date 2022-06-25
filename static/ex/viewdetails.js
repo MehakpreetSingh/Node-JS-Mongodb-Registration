@@ -1,5 +1,5 @@
-if(localStorage.getItem('admintoken')==="") {
-	window.location.replace("/adminLogin") ;
+if(localStorage.getItem('token')==="") {
+	window.location.replace("/") ;
 }
 
 var x = document.getElementsByClassName("logoutUser")[0] ;

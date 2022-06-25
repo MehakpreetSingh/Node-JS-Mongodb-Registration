@@ -1,5 +1,7 @@
 console.clear();
 
+
+
 const loginBtn = document.getElementById('login');
 const signupBtn = document.getElementById('signup');
 
@@ -81,7 +83,7 @@ regbtn.addEventListener("click" , registerUser)
 				if (result.status === 'ok') {
 					// everythign went fine
 					console.log('Got the token: ', result.data)
-					localStorage.setItem('token', result.data)
+					localStorage.setItem('admintoken', result.data)
 					alert('Success')
 				} else {
 					alert(result.error)

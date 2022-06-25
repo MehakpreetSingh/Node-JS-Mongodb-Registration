@@ -1,12 +1,8 @@
 
 const mongoose = require('mongoose')
 
-const FarmerSchema = new mongoose.Schema(
+const FarmerActivity = new mongoose.Schema(
 	{
-		reghead : {
-			type : mongoose.Schema.Types.ObjectId ,
-            ref:'Regionalheads'
-		} ,
 		Name: { type: String, required: true },
 		aadharid: { type: Number, required: true },
 		region: { type: String, required: true },
@@ -16,9 +12,9 @@ const FarmerSchema = new mongoose.Schema(
 		latitude : { type: Number, required: true },
 		longitude : { type: Number, required: true },
 	},
-	{ collection: 'FarmerDetails' }
+	{ collection: 'FarmerActivity' }
 )
 
-const model = mongoose.model('FarmerSchema', FarmerSchema)
+const model = mongoose.model('FarmerActivity', FarmerActivity)
 
 module.exports = model

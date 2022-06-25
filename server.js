@@ -6,6 +6,8 @@ const User = require('./model/user')
 const Regionalhead = require('./model/regional')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const Farmer = require('./model/Farmer')
+const fetchuser = require('./fetchuser')
 
 const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
 
@@ -71,7 +73,7 @@ app.post('/api/adminlogin', async (req, res) => {
 	if (await bcrypt.compare(password, user.password)) {
 		// the username, password combination is successful
 
-		const token = jwt.sign(
+		const authtoken = jwt.sign(
 			{
 				id: user._id,
 				email: user.email
@@ -79,7 +81,7 @@ app.post('/api/adminlogin', async (req, res) => {
 			JWT_SECRET
 		)
 
-		return res.json({ status: 'ok', data: token })
+		return res.json({ status: 'ok', data: authtoken })
 	}
 
 	res.json({ status: 'error', error: 'Invalid username/password' })
@@ -96,7 +98,7 @@ app.post('/api/headlogin', async (req, res) => {
 	if (await bcrypt.compare(password, user.password)) {
 		// the username, password combination is successful
 
-		const token = jwt.sign(
+		const authtoken = jwt.sign(
 			{
 				id: user._id,
 				email: user.email
@@ -104,7 +106,7 @@ app.post('/api/headlogin', async (req, res) => {
 			JWT_SECRET
 		)
 
-		return res.json({ status: 'ok', data: token })
+		return res.json({ status: 'ok', data: authtoken })
 	}
 
 	res.json({ status: 'error', error: 'Invalid username/password' })
@@ -186,6 +188,26 @@ app.post('/api/adminregister', async (req, res) => {
 	res.json({ status: 'ok' })
 })
 
+app.post('/api/farmercreate' , fetchuser , async(req ,res) => {
+	const {name ,aadharid,region,crops_produced,no_of_seedlings,income,latitude,longitude } = req.body ;
+	const id = req.user ;
+	try {
+		const response = await Farmer.create({
+			id ,
+			name ,
+			aadharid,
+			region,
+			crops_produced,
+			no_of_seedlings,
+			income,
+			latitude,
+			longitude
+		})
+		console.log('User created successfully: ', response)
+	} catch (error) {
+		return res.json({ error , message:error.message })
+	}
+}) 
 app.listen(9999, () => {
 	console.log('Server up at 9999')
 })

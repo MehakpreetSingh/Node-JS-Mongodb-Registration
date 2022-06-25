@@ -33,6 +33,7 @@
             </ul>
             
           </div>
+          <button  type="button" class="logoutUser btn btn-outline-primary">Logout</button>
         </div>
       </nav>
     <form>
@@ -41,29 +42,29 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="actname">Name of Activity</label>
-                    <input type="text" class="form-control" id="actname" placeholder="Activity Name">
+                    <input type="text" id="activityName" class="form-control" id="actname" placeholder="Activity Name">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="start">Start Date</label>
-                    <input type="text" class="form-control" id="start" placeholder="Start Date">
+                    <input type="text" id="startDate" class="form-control" id="start" placeholder="Start Date">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="end">End Date</label>
-                    <input type="text" class="form-control" id="end" placeholder="End Date">
+                    <input type="text" id="endDate" class="form-control" id="end" placeholder="End Date">
                 </div>
                 <div class="form-group col-md-6">
                     <label>Activity Proof</label>
-                    <input type="file" name="upload" class="form-control" />
+                    <input type="file" id="actproof" name="upload" class="form-control" />
                 </div>
             </div>
             <h3>Information of People Involved</h3>
             <div class="form-group col-md-6">
                 <label for="peoplename">Name</label>
-                <input type="text" class="form-control" id="peoplename" placeholder="Name">
+                <input type="text" id="labourName" class="form-control" id="peoplename" placeholder="Name">
             </div>
             <div class="form-group col-md-6">
                 <label for="workduration">Work Duration In Months</label>
-                <input type="number" class="form-control" id="workduration" min="1" placeholder="Work Duration">
+                <input type="number" id class="form-control" id="workduration" min="1" placeholder="Work Duration">
             </div>
             <div class="form-group col-md-6">
                 <label for="wages">Wages</label>
@@ -118,6 +119,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+        <script src="./form.js"></script>
     </div>
 </body>
 
