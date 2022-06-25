@@ -19,6 +19,8 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'static/ex')));
 app.use('/' , express.static(path.join(__dirname, 'static' , "/ex/index.html")) )
 app.use('/admin' , express.static(path.join(__dirname, 'static' , "/ex/admin.html")) )
+app.use('/form' , express.static(path.join(__dirname, 'static' , "/ex/form.html")) )
+app.use('/farmerdetails' , express.static(path.join(__dirname, 'static' , "/ex/farmerdetail.html")) )
 app.use('/adminLogin' , express.static(path.join(__dirname, 'static' , "/ex/index.html")) )
 app.use(bodyParser.json())
 
@@ -83,7 +85,7 @@ app.post('/api/adminlogin', async (req, res) => {
 
 app.post('/api/headlogin', async (req, res) => {
 	const { email, password } = req.body
-	const user = await User.findOne({ email }).lean()
+	const user = await Regionalhead.findOne({ email }).lean()
 
 	if (!user) {
 		return res.json({ status: 'error', error: 'Invalid email/password' })
@@ -127,7 +129,7 @@ app.post('/api/headregister', async (req, res) => {
 	const password = await bcrypt.hash(plainTextPassword, 10)
 
 	try {
-		const response = await User.create({
+		const response = await Regionalhead.create({
 			username,
 			email ,
 			password
