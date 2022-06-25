@@ -37,7 +37,7 @@ regbtn.addEventListener("click" , registerUser)
 				const email = document.getElementById('email').value
 				const password = document.getElementById('password').value
 
-				const result = await fetch('/api/headregister', {
+				const result = await fetch('/api/adminregister', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ regbtn.addEventListener("click" , registerUser)
 				const email = document.getElementById('email-log').value
 				const password = document.getElementById('password-log').value
 
-				const result = await fetch('/api/headlogin', {
+				const result = await fetch('/api/adminlogin', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
@@ -86,5 +86,5 @@ regbtn.addEventListener("click" , registerUser)
 				} else {
 					alert(result.error)
 				}
-				window.location.replace("/allfarmers")
+				window.location.replace("/admin")
 			}

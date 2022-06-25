@@ -12,41 +12,63 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light w-full bg-light z-50">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">AgriNet</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/allfarmers">All Farmers</a>
+                  </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/form">Farmer Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/farmerdetails">Farmer Details</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
     <div class="container">
         <h3>Farmer Details</h3>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Name">
+                <input id="name" type="text" class="form-control" id="name" placeholder="Name">
             </div>
             <div class="form-group col-md-6">
                 <label for="aadhar">Aadhar Number</label>
-                <input type="number" class="form-control" id="aadhar" placeholder="Aadhar Number">
+                <input type="number" id="aadharid" class="form-control" id="aadhar" placeholder="Aadhar Number">
             </div>
             <div class="form-group col-md-6">
                 <label for="region">Region</label>
-                <input type="text" class="form-control" id="region" placeholder="Region">
+                <input type="text" id="region" class="form-control" id="region" placeholder="Region">
             </div>
             <div class="form-group col-md-6">
                 <label for="crop">Crop Produced</label>
-                <input type="text" class="form-control" id="crop" placeholder="Crop Produced">
+                <input type="text" id="crops_produced" class="form-control" id="crop" placeholder="Crop Produced">
             </div>
             <div class="form-group col-md-6">
                 <label for="seedling">Number of Seedlings</label>
-                <input type="text" class="form-control" id="seedling" placeholder="Number of Seedlings">
+                <input type="text" id="no_of_seedlings" class="form-control" id="seedling" placeholder="Number of Seedlings">
             </div>
             <div class="form-group col-md-6">
                 <label for="income">Monthly Income</label>
-                <input type="number" class="form-control" id="income" placeholder="Monthly Income">
+                <input type="number" id="income" class="form-control" id="income" placeholder="Monthly Income">
             </div>
 
             <div class="form-group col-md-6">
                 <label for="lat">Latitude</label>
-                <input type="number" class="form-control" id="land" placeholder="Latitude">
+                <input type="number" id="latitude" class="form-control" id="land" placeholder="Latitude">
             </div>
             <div class="form-group col-md-6">
                 <label for="long">Longitude</label>
-                <input type="number" class="form-control" id="long" placeholder="Longitude">
+                <input type="number" id=""latitude class="form-control" id="long" placeholder="Longitude">
             </div>
         </div>
     </div>
