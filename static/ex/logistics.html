@@ -21,6 +21,7 @@
     <!-- Charts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </script>
+    
 
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
@@ -49,9 +50,30 @@
 
     <!-- Chart Section -->
     <div class="col-lg-8 col-md-12 col-sm-12 labour-chart mx-auto">
-        <h2>Crop Cultivation Logistics</h2>
+      <h2 style="text-align: center">IMPACT BEING CREATED</h2>
+      <div class="container">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                REGIONS
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Aaloo Khet</a>
+                <a class="dropdown-item" href="#">Angora Farm</a>
+                <a class="dropdown-item" href="#">Chaubatia Gardens</a>
+                <a class="dropdown-item" href="#">Macchi Tal</a>
+                <a class="dropdown-item" href="#">Ram Tal Horticulture Garden</a>
+
+            </div>
+        </div>
+        <br>
+        <h4>People employed against the activites</h4>
         <canvas id="myLabourChart"></canvas>
     </div>
+    <div class="col-lg-9 col-md-12 col-sm-12 pie-chart mx-auto">
+      <h4>Relationship between Wages and Material-Cost</h4>
+      <canvas id="myPieChart"></canvas>
+  </div>
     <div class="row ">
         <div class="col-lg-9 col-md-10 col-sm-10 mx-auto  activity-content">
             <h4>Seeding</h4>
@@ -80,10 +102,7 @@
             25 EC or Dimethoate 30 EC 1 ml/lit. For caterpillars spray Phosalone 35 EC or Monocrotophos 36 EC 2 ml/lit.
         </div>
     </div>
-    <div class="col-lg-9 col-md-12 col-sm-12 pie-chart mx-auto">
-        <h2>Relationship between Wages and Material-Cost</h2>
-        <canvas id="myPieChart"></canvas>
-    </div>
+   
 
 
     <script src="logistics.js"></script>
