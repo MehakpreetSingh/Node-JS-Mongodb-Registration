@@ -3,6 +3,7 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const User = require('./model/user')
+const Regionalhead = require('./model/regional')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
@@ -54,7 +55,7 @@ app.post('/api/change-password', async (req, res) => {
 	}
 })
 
-app.post('/api/login', async (req, res) => {
+app.post('/api/adminlogin', async (req, res) => {
 	const { email, password } = req.body
 	const user = await User.findOne({ email }).lean()
 
@@ -79,7 +80,32 @@ app.post('/api/login', async (req, res) => {
 	res.json({ status: 'error', error: 'Invalid username/password' })
 })
 
-app.post('/api/register', async (req, res) => {
+app.post('/api/headlogin', async (req, res) => {
+	const { email, password } = req.body
+	const user = await User.findOne({ email }).lean()
+
+	if (!user) {
+		return res.json({ status: 'error', error: 'Invalid email/password' })
+	}
+
+	if (await bcrypt.compare(password, user.password)) {
+		// the username, password combination is successful
+
+		const token = jwt.sign(
+			{
+				id: user._id,
+				email: user.email
+			},
+			JWT_SECRET
+		)
+
+		return res.json({ status: 'ok', data: token })
+	}
+
+	res.json({ status: 'error', error: 'Invalid username/password' })
+})
+
+app.post('/api/headregister', async (req, res) => {
 	const { username, email , password: plainTextPassword } = req.body
 
 	if (!username || typeof username !== 'string') {
@@ -120,3 +146,5 @@ app.post('/api/register', async (req, res) => {
 app.listen(9999, () => {
 	console.log('Server up at 9999')
 })
+
+

@@ -37,7 +37,7 @@ regbtn.addEventListener("click" , registerUser)
 				const email = document.getElementById('email').value
 				const password = document.getElementById('password').value
 
-				const result = await fetch('/api/register', {
+				const result = await fetch('/api/headregister', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ regbtn.addEventListener("click" , registerUser)
 				const email = document.getElementById('email-log').value
 				const password = document.getElementById('password-log').value
 
-				const result = await fetch('/api/login', {
+				const result = await fetch('/api/headlogin', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
