@@ -19,6 +19,7 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'static/ex')));
 app.use('/' , express.static(path.join(__dirname, 'static' , "/ex/index.html")) )
 app.use('/admin' , express.static(path.join(__dirname, 'static' , "/ex/admin.html")) )
+app.use('/adminLogin' , express.static(path.join(__dirname, 'static' , "/ex/index.html")) )
 app.use(bodyParser.json())
 
 app.post('/api/change-password', async (req, res) => {
